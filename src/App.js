@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-
+import Login from './components/loginAndSignUp';
 function App() {
   return (
-    <div className="text-2xl">
-     Hellllo
+    <div className="App">
+      <Login/>
     </div>
   );
 }
