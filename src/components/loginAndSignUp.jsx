@@ -1,6 +1,6 @@
 import { EyeIcon, EyeOffIcon } from 'lucide-react'
 import { useState } from 'react'
-
+import './styles.css'
 export default function Component() {
   const [isLogin, setIsLogin] = useState(true)
   const [showPassword, setShowPassword] = useState(false)
@@ -9,8 +9,8 @@ export default function Component() {
   const togglePasswordVisibility = () => setShowPassword(!showPassword)
 
   return (
-    <div className="min-h-screen flex items-center justify-center background">
-      <div className="bg-neutral-100 p-8 rounded-lg shadow-md w-full max-w-md">
+    <div className="min-h-screen flex items-center justify-center background" id='page'>
+      <div className="bg-neutral-100 p-8 rounded-lg shadow-md w-full max-w-md" id='glass'>
         <h2 className="text-2xl font-bold mb-6 text-center">
           {isLogin ? 'LOGIN' : 'SIGN UP'}
         </h2>
@@ -30,7 +30,7 @@ export default function Component() {
             </div>
           )}
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="email" className="block text-sm font-medium text-black">
               Email Address
             </label>
             <input
@@ -42,7 +42,7 @@ export default function Component() {
             />
           </div>
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="password" className="block text-sm font-medium text-black">
               Password
             </label>
             <div className="relative mt-1">

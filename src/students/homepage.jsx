@@ -1,12 +1,11 @@
 import React from 'react'
-import logo from '../assets/logo.png'
+// import logo from '../assets/logo.png'
 import {Link} from 'react-router-dom'
 import { CiSearch } from "react-icons/ci";
-import dp from '../assets/dp.png'
+import Navbar from '../components/navbar';
+// import dp from '../assets/dp.png'
 export default function Homepage() {
-
     function Item({item}){
-        console.log("HomePage",item)
         return (
         <div>
             <div className='flex flex-col justify-center items-center mt-2'>
@@ -60,7 +59,8 @@ export default function Homepage() {
       },
       {
         id:4,
-        name:"item 4",
+        name:"Camera",
+        img:"camera.png",
         permission:true,
         description:"lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et"
       
@@ -117,7 +117,7 @@ export default function Homepage() {
     ]
     const [search,setSearch]  = React.useState('')
     const [filteredItems,setFilteredItems] = React.useState(items)
-    const [show,setShow] = React.useState(false)
+    // const [show,setShow] = React.useState(false)
 
     const handleSearch = (event) => {
         const query = event.target.value.toLowerCase();
@@ -127,11 +127,23 @@ export default function Homepage() {
         const filtered = items.filter(item => item.name.toLowerCase().startsWith(query));
         setFilteredItems(filtered);
       };
-    
+      // const divRef = React.useRef(null);
+
+      // const handleClickOutside = (event) => {
+      //   if (divRef.current && !divRef.current.contains(event.target)) {
+      //     setShow(false);
+      //   }
+      // };
+      // React.useEffect(() => {
+      //   document.addEventListener('mousedown', handleClickOutside);
+      //   return () => {
+      //     document.removeEventListener('mousedown', handleClickOutside);
+      //   };
+      // }, []);
    
   return (
     <div>
-        <div className='flex justify-between py-2 bg-slate-400'>
+        {/* <div className='flex justify-between py-2 bg-slate-400'>
         <div className='flex ml-4'>
             <img src={logo} alt='img' className='w-16 h-14 mr-2' />
             <h1 className='text-sm sm:text-xl md:text-2xl lg:text-4xl font-semibold mt-2'>GYMKHANA INVENTORY SYSTEM</h1>
@@ -140,7 +152,7 @@ export default function Homepage() {
             <button onClick={() => setShow(!show)}><img src={dp} className='w-14 h-14' alt='DP'/></button>
             {
                 show ? 
-                    <div className='absolute right-4 flex flex-col bg-slate-900 text-white p-4 rounded-xl'>
+                    <div ref={divRef} className='absolute right-4 flex flex-col bg-slate-900 text-white p-4 rounded-xl'>
                         <Link>View Profile</Link> 
                         <Link>Log Out</Link>
                     </div>
@@ -148,7 +160,9 @@ export default function Homepage() {
                     null
             }
         </div>
-        </div>
+        </div> */}
+
+        <Navbar/>
 
        <div className='flex justify-center'>
         <input placeholder='Search' onChange={handleSearch} className='px-3 py-1 mt-4 border-solid border-2 border-slate-900 rounded-2xl'/>
